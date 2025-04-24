@@ -5,10 +5,6 @@ git config - get git configuration values on a global or local project level (ca
 
 https://www.youtube.com/watch?v=zTjRZNkhiEU
 
-
-
-
-
 **Definitions** <br>
 
 
@@ -20,7 +16,7 @@ Working directory:
 
 Staging Area
 - serves as an intermediate step between your local repository changes and the actual commit
-- temporary storage: the staging are holds changes that are intended to be part of the next commit
+- temporary storage: the staging are holds changegits that are intended to be part of the next commit
 - preview changes: it allows you to preview your changes before committing them
 
 Committing Changes
