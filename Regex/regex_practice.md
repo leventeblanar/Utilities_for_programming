@@ -90,3 +90,63 @@ Login time: 08:45
 2. ends with: .*successfully$
 3. users: (?<=User: )\w+
 4. times after 'Login time: ': \b(?<=Login time: )\d{2}:\d{2}
+
+
+<h2>TASK 5.</h2>
+INFO: Backup started
+User: viktor_88
+Backup file: daily_2025-05-06.zip
+Login time: 07:59
+ERROR: File not found
+User: sarah.connor
+Login time: 08:02
+INFO: Backup completed successfully
+
+1. starts with info: ^INFO: .*
+2. end with: .* successfully$
+3. users: (?<=User: )[\w.]+
+4. times: (?<=Login time: )\d{2}:\d{2}
+
+
+
+<h2>ŤASK 6.</h>
+
+ALERT: Unauthorized access attempt
+User: root_admin
+Access time: 03:14
+ALERT: Firewall rule updated
+User: guest23
+Access time: 04:01
+INFO: Routine check complete
+Backup created: backup_2025-05-07.zip
+ALERT: System override engaged
+System status: CRITICAL
+
+1. ^ALERT: .*
+2. \w+\.zip
+3. (?<=User: )[\w.]+
+4. (?<=Access time: )\d{2}:\d{2}
+5. .*critical$
+
+
+
+<h2>ŤASK 7.</h>
+TASK: fix memory leak
+ASSIGNED TO: bence_the_dev
+Status: in_progress
+Deadline: 2025-05-08
+TASK: update documentation
+ASSIGNED TO: zsuzsa.doc
+Status: done
+Deadline: 2025-05-10
+TASK: security audit
+ASSIGNED TO: admin@cybersec.io
+Status: pending_review
+Deadline: 2025-05-12
+
+
+1. ^TASK:.*
+2. (?<=Deadline: )[\d-]+ || vagy helyesebben: (?<=Deadline: )\d{4}-\d{2}-\d{2}
+3. (?<=ASSIGNED TO: )[\w.@]+
+4. .*done$ || vagy: .*?done$
+5. [\w]+@[\w.]+\.(com|io|hu) (ezt azért írtam így, hogy tuti legyen a végén egy ilyen mert egy doksiba csinálom az összes feladatot és észrevettem, hogy megtalál olyat is, ahol nincs .com vagy .io)
