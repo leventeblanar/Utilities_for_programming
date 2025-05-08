@@ -109,7 +109,7 @@ INFO: Backup completed successfully
 
 
 
-<h2>ŤASK 6.</h>
+<h2>TASK 6.</h>
 
 ALERT: Unauthorized access attempt
 User: root_admin
@@ -130,7 +130,7 @@ System status: CRITICAL
 
 
 
-<h2>ŤASK 7.</h>
+<h2>TASK 7.</h>
 TASK: fix memory leak
 ASSIGNED TO: bence_the_dev
 Status: in_progress
@@ -150,3 +150,50 @@ Deadline: 2025-05-12
 3. (?<=ASSIGNED TO: )[\w.@]+
 4. .*done$ || vagy: .*?done$
 5. [\w]+@[\w.]+\.(com|io|hu) (ezt azért írtam így, hogy tuti legyen a végén egy ilyen mert egy doksiba csinálom az összes feladatot és észrevettem, hogy megtalál olyat is, ahol nincs .com vagy .io)
+
+
+
+<h2>TASK 8.</h>
+
+Name: Zsolt, Age: 29, Email: zsolt.dev@techmail.com
+Name: Éva, Age: 34, Email: eva_92@cyberspace.io
+Name: Bálint, Age: 41, Email: balint@legacy.hu
+Talk: "Intro to Cyber Hygiene", Start: 10:00, End: 10:45
+Talk: "AI Tools in DevOps", Start: 11:00, End: 11:30
+Talk: "Legacy Systems & Refactoring", Start: 11:45, End: 12:30
+
+
+1. (?<=Name: )[\wéÉáÁ]+
+2. Name: ([\wÁÉÍÓÖŐÚÜŰáéíóöőúüű]+), Age: (\d+)
+3. [\w\.-]+@[\w\.-]+\.com
+4. (?<=Talk: ").*(?!") 
+5. Talk: "([^"]+)", Start: (\d{2}:\d{2})
+
+
+
+<h2>TASK 9.</h>
+
+Event: Login
+User: nora88
+Timestamp: 2025-05-08 08:01
+IP: 192.168.0.101
+Status: success
+
+Event: Password Reset
+User: admin_root
+Timestamp: 2025-05-08 08:15
+IP: 10.0.0.42
+Status: failed
+
+Event: Login
+User: zsombi.dev
+Timestamp: 2025-05-08 08:19
+IP: 172.16.1.1
+Status: success
+
+
+1. ^Status: success
+2. (?<=IP: )[\d.]+ - (?<=IP: )\d{1,3}(?:\.\d{1,3}){3}
+3. (?<=User: )[\w\.]+
+4. (?<=Event: ).+
+5. (?<=Timestamp: )\d{4}-\d{2}-\d{2} 08:\d{2}
